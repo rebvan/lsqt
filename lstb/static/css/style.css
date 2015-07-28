@@ -1,0 +1,102 @@
+.node circle {
+	fill: slategray;
+}
+
+.node {
+	fill: slategray;
+}
+
+.label {
+	font-size: xx-small;
+}
+
+.default-tree-link {
+	stroke: deepskyblue;
+	stroke-opacity: .6;
+	fill: none;
+}
+
+.default-bundle {
+	stroke: none;
+	fill-opacity: .5;
+	fill: lightcoral;
+}
+
+.default-link {
+	stroke: deepskyblue;
+	stroke-opacity: .8;
+	fill: none;
+}
+
+.hover-link {
+	stroke: red;
+	stroke-opacity: 1;
+	stroke-width: 2;
+	fill: none;
+}
+
+.fade-link {
+	stroke-opacity: .1;
+}
+
+.fade-bundle {
+	fill-opacity: .1;
+}
+
+.link {
+	stroke: steelblue;
+	stroke-opacity: .2;
+	fill: none;
+}
+
+/*.link-light {
+	stroke: steelblue;
+	stroke-opacity: .1;
+	fill: none;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+
+.text-node {
+	font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.tree-link {
+	stroke: steelblue;
+	stroke-opacity: .2;
+	fill: none;
+}*/
+
+.d3-tip {
+	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1;
+	font-weight: bold;
+	padding: 8px;
+	background: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	border-radius: 5px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+	box-sizing: border-box;
+	display: inline;
+	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width: 100%;
+	line-height: 0.9;
+	color: rgba(0, 0, 0, 0.8);
+	content: "\25BC";
+	position: absolute;
+	text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+	margin: -1px 0 0 0;
+	top: 100%;
+	left: 0;
+}

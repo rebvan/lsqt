@@ -1,0 +1,85 @@
+{% extends 'lstb/base.html' %} {% load staticfiles %} {% block extrahead %} {{ block.super }}
+<link href="{% static 'css/style.css' %}" rel="stylesheet"> {% endblock %} {% block content %}
+<h1>LSTB: Edge Bundling via Low-Stretch Trees</h1>
+
+<div style="margin:25px 10px;">
+
+<form id="fileForm"><!-- action="/" method="post" enctype="multipart/form-data">-->
+{% csrf_token %}
+<ol class="simple-list">
+
+<li><h3>Upload your graph data</h3>
+	<p>
+		<input type="file" name="graphFile" id="graphFile" accept=".txt,.json" style="padding:5px;" />
+	</p>
+	<p><strong>File format:</strong> text adjacency list, e.g.:<br/>
+<pre>source1 target1 target2
+source2 target3</pre>
+	<strong>OR</strong> json node-link data, e.g.:<br/>
+<pre>{ "nodes":[
+	{"name":"Marigold"},
+	{"name":"Geranium"}
+	],
+"links":[
+	{"source":1,"target":0}
+	]
+ }</pre>
+	</p>
+</li>
+
+<li><h3>Choose your encoding options</h3>
+
+	<span style="padding:5px;"></span>
+    Edge layers:<select id="top-select">
+        <option value="bundles">Bundles top</option>
+        <option value="edges">Remainder (spline) edges top</option>
+    </select>
+
+    <br/><br/>
+
+    <span style="padding:5px;"></span>
+    <span id="colour-boxes">
+    Bundle colour: <select id="bundle-colour-select"></select>
+    <span style="padding:10px;"></span>
+    Edge colour: <select id="edge-colour-select"></select>
+    <span style="padding:10px;"></span>
+    </span>
+
+</li>
+
+<li><h3>Run the visualization</h3>
+    <input type="submit" value="Go!" />
+</li>
+
+<li><h3>Play around</h3>
+	Drag and drop nodes, hover over edges and bundles, and adjust visibility.
+
+	<br/><br/>
+
+	<span id="encoding-boxes">
+		<span style="padding:5px;"></span>
+	    <input type="checkbox" name="enc-bundles" value="bundles" checked> Bundles
+	    <span style="padding:10px;"></span>
+	    <input type="checkbox" name="enc-edges" value="edges" checked> Rem. edges
+	    <span style="padding:10px;"></span>
+	    <input type="checkbox" name="enc-hover" value="hover" checked> Hover
+	    <span style="padding:10px;"></span>
+	    <input type="checkbox" name="enc-labels" value="labels"> Labels
+   	</span>
+</li>
+
+</ol>
+</form>
+
+</div>
+
+<div id="vis" style='width:100%; min-height:600px;'></div>
+
+{% endblock %} {% block extrafooter %} {{ block.super }}
+<script src="{% static 'js/d3.tip.v0.6.3.js' %}"></script>
+<script src="{% static 'js/colourPicker.js' %}"></script>
+<script src="{% static 'js/utils.js' %}"></script>
+<script src="{% static 'js/treeUtils.js' %}"></script>
+<script src="{% static 'js/lstb.js' %}"></script>
+
+{% endblock %}
