@@ -212,19 +212,19 @@ function forceLayout(data) {
     // draw nodes
     var node = nodeGroup.selectAll(".node")
         .data(data.nodes)
-        .enter().append("g");
-    node.append("text")
-        .attr("id", "label")
-        .text(function(d) { return getTooltip(d); })
-        .attr("class", "label")
-        .style('display', 'none');
-    node.append("circle")
+        .enter().append("circle")
         .attr("class", "node")
         .attr("r", nodeRadius)
         .on("mouseover", tip.show)
         .on("mouseout", tip.hide)
         .on("dblclick", dblclick)
         .call(drag);
+
+    node.append("text")
+        .attr("id", "label")
+        .text(function(d) { return getTooltip(d); })
+        .attr("class", "label")
+        .style('display', 'none');
 
     force.on("start", function() {
         linkGroup.selectAll("*").remove();
