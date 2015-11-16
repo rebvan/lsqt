@@ -21,7 +21,7 @@ def low_stretch_tree(graph, x=None, y=None):
 		x = exp(sqrt(log(n, 2) * log(log(n, 2), 2)))
 
 	if y == None:
-		rho = log(x) == 0 ? 1 : ceil(3 * log(n) / log(x))
+		rho = 1 if log(x) == 0 else ceil(3 * log(n) / log(x))
 		mu = 9 * rho * log(n)
 		y = x * mu
 
