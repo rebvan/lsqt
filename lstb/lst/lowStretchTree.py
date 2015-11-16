@@ -5,7 +5,6 @@ from math import exp
 from math import sqrt
 from math import ceil
 from math import floor
-from math import max
 
 import lstUtils as utils
 
