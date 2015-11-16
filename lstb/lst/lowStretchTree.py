@@ -5,6 +5,7 @@ from math import exp
 from math import sqrt
 from math import ceil
 from math import floor
+from math import max
 
 import lstUtils as utils
 
@@ -20,7 +21,7 @@ def low_stretch_tree(graph, x=None, y=None):
 		x = exp(sqrt(log(n, 2) * log(log(n, 2), 2)))
 
 	if y == None:
-		rho = ceil(3 * log(n) / log(x))
+		rho = log(x) == 0 ? 1 : ceil(3 * log(n) / log(x))
 		mu = 9 * rho * log(n)
 		y = x * mu
 
