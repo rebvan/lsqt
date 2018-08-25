@@ -1,2 +1,2 @@
-# lstb
-LSTB: Layout-free edge bundling using low-stretch trees.
+# lsqt
+LSQT: Low Stretch Quasi Trees for Both Bundling and Layout
