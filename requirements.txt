@@ -3,7 +3,7 @@ decorator==3.4.0
 dj-database-url==0.3.0
 dj-static==0.0.6
 django-toolbelt==0.0.1
-gunicorn==19.3.0
+gunicorn==19.5.0
 networkx==1.9.1
 numpy==1.8.1
 psycopg2==2.6
