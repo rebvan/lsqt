@@ -1,6 +1,6 @@
-from django.conf.urls import patterns, include, url
+from django.urls import path
 from django.contrib import admin
 
-urlpatterns = patterns('',
-	url(r'^$', 'lstb.views.home', name='home'),
-)
+urlpatterns = [
+    path('', views.home, name='home'),
+]
