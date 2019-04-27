@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.http import HttpResponseBadRequest
 
 import json
-import lstHandler as lsth
+from . import lstHandler as lsth
 
 def home(request):
     if request.method != 'POST':

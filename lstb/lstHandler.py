@@ -1,5 +1,4 @@
-import lst.lowStretchTree as lst
-
+import lst.lowStretchTree as lsTree
 import lst.lstUtils as utils
 
 def runLST(f):
@@ -16,6 +15,6 @@ def runLST(f):
 	else:
 		return False
 
-	tree = lst.low_stretch_tree(graph)
+	tree = lsTree.low_stretch_tree(graph)
 	
 	return utils.get_tree_json(graph, tree)
